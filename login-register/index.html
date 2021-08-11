@@ -4,9 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Register Form</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="login-register">
+            <div class="nav-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Registrar</button>
+            </div>
+            <div class="form-group">
+                <form action="" id="loginform">
+                    <label for="username">username</label>
+                    <input type="text" id="username">
+                    <label for="password">password</label>
+                    <input type="text" id="password">
+                    <input type="submit" value="Submit" class="submit">
+                </form>
+                <form action="" id="registerform">
+                    <label for="fullname">fullname</label>
+                    <input type="text" id="fullname">
+                    <label for="email">email</label>
+                    <input type="text" id="email">
+                    <label for="password">password</label>
+                    <input type="text" id="password">
+                    <label for="confirmpassword">confirmpassword</label>
+                    <input type="text" id="confirmpassword">
+                    <label for="phone">phone</label>
+                    <input type="text" id="phone">
+                    <input type="submit" value="Submit" class="submit">
+                </form>
+            </div>
+            <div id="forgot">
+                <a href="">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var loginBtn = document.getElementById("loginBtn");
+        var registerBtn = document.getElementById("registerBtn");
+        var loginform = document.getElementById("loginform");
+        var registerform = document.getElementById("registerform");
+        var forgot = document.getElementById("forgot");
+
+        registerBtn.onclick = function(){
+            // alert('Regitration button click');
+            registerform.style.left = '0px';
+            registerform.style.opacity = '1',
+            loginform.style.left = '-500px';
+            loginform.style.opacity = '0';
+            forgot.style.left = '-500px';
+            forgot.style.opacity = '0';
+            registerBtn.classList.add('active');
+            loginBtn.classList.remove('active');
+        }
+
+        loginBtn.onclick = function(){
+            // alert('Login button click');
+            loginform.style.left = '0px';
+            loginform.style.opacity = '1'
+            forgot.style.left='0px';
+            forgot.style.opacity = '1';
+            registerform.style= '500px';
+            loginBtn.classList.add('active') ;
+            registerBtn.classList.remove('active');
+            registerform.style.opacity = '0';
+        }
+
+    </script>
 </body>
 </html>
